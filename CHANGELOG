@@ -1,5 +1,7 @@
 
 Jun 28
+- put Rails 2.1.0 in vendor/rails
+- capify project
 
 ==== moved to GitHub Jun 28
 
