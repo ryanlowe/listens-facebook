@@ -1,0 +1,17 @@
+= simple_format plugin for Ruby on Rails
+
+  simple_format is a Rails plugin that formats and escapes database
+  text for use in HTML views. The result looks a lot like text in
+  Gmail: line breaks are converted and links are linked. It will not
+  support tags like BBCode, it just formats plain text.
+
+== Installation
+
+  ./script/plugin install http://simple-format.rubyforge.org/svn/trunk/simple_format/
+
+== Usage
+
+  SimpleFormat.format(@model.attribute)
+  
+  Note: HTML angle brackets are escaped by format() so
+  you do not need to use h() as well.

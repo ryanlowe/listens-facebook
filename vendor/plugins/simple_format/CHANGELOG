@@ -1,0 +1,6 @@
+
+December 17
+- handle nil and non-string properly
+
+September 25
+- simple_format plugin created from code in existing projects
