@@ -1,0 +1,32 @@
+<fb:if-is-friends-with-viewer uid="<%= @uid %>">
+  <fb:mediaheader uid="<%= @uid %>">
+    <fb:header-title>Listens - <%= person_name_possessive(@uid) %> Album</fb:header-title>
+  </fb:mediaheader>
+<%= render :partial => 'public/tabs' %>
+  <div style="background-color:#f7f7f7;padding:10px;">
+    <div>
+      <h1><%= @album.to_s %></h1>
+      <div style="font-size:12px;color:#333;margin:2px 0px;">
+      In <%= link_person_name_possessive(@uid) %> collection
+<% if @album.recommended_by -%>
+      - recommended by <%= link_person_name(@album.recommended_by) %>
+<% end -%>
+      </div>
+<%= render :partial => 'public/review' %>
+    </div>
+    <table style="margin-top:5px; width:100%;" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="width:50%;vertical-align:top;">
+<%= render :partial => 'public/listens' %>
+        </td>
+        <td style="width:50%;vertical-align:top;padding-left:5px;">
+<%= render :partial => 'public/discography' %>
+        </td>
+      </tr>
+    </table>
+  </div>
+<%= render :partial => 'comment/comments' %>
+  <fb:else>
+<%= render :partial => 'site/error_404' %>
+  </fb:else>
+</fb:if-is-friends-with-viewer>

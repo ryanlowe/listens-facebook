@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+interpol_past:
+  id: 200001
+  created_by: 12345678
+  created_at: 2007-11-28 08:45:33
+  updated_at: 2007-11-28 08:45:33
+  album_id: 100002 # interpol
+  listened_at: 2007-12-25
+interpol_now:
+  id: 200002
+  created_by: 12345678
+  created_at: 2007-11-28 08:45:33
+  updated_at: 2007-11-28 08:45:33
+  album_id: 100002 # interpol
+  listened_at: 2007-12-28 08:45:33

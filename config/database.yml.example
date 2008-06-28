@@ -1,0 +1,11 @@
+development:
+  adapter: mysql
+  database: records_dev
+  username: root
+  password:
+
+test:
+  adapter: mysql
+  database: records_test
+  username: root
+  password:

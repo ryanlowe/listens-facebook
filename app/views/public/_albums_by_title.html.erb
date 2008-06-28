@@ -1,0 +1,12 @@
+  <div style="padding:9px; border:1px solid #ccc;background-color:#fff;">
+    <h2>By Title</h2>
+    <div style="margin-top:8px;color:#333;">
+<% if @albums.size < 1 %>
+    No albums have been added by <%= person_first_name(@uid) %> yet
+<% else -%>
+<%   for album in @albums -%>
+  <%= link_public_album(album) %>&nbsp;<%= listen_count(album) %><br/>
+<%   end -%>
+<% end -%>
+    </div>
+  </div>

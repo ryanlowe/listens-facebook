@@ -1,0 +1,17 @@
+<div style="padding:9px; border:1px solid #ccc;background-color:#fff;">
+  <h2>Albums In Rotation by <%= person_first_name(@uid) %></h2>
+  <div style="margin-top:8px;color:#333;">
+<% if @rotation.size < 1 %>
+    No albums have been listened to more than once in the past <%= @rotation_days %> days
+<% else -%>
+    <div style="color: #777;">
+      Listened to more than once in the past <%= @rotation_days %> days
+    </div>
+    <div style="margin-top:8px;">
+<%   for album in @rotation -%>
+      <%= link_public_album(album) %>&nbsp;x<%= album.rotation_count %><br/>
+<%   end -%>
+    </div>
+<% end -%>
+  </div>
+</div>

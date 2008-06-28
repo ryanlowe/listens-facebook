@@ -1,0 +1,10 @@
+<div style="margin: 8px 16px -16px 0px; font-size: 10pt; font-weight: bold; text-align: right;">
+  <%= link_to 'My Listens', :controller => 'listen', :action => 'list' %> &raquo;
+</div>
+<fb:tabs>
+  <fb:tab-item href='<%= url_for :controller => 'public', :action => 'listens', :uid => @uid %>' title='Listens' <%= @listens_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'public', :action => 'albums', :uid => @uid %>' title='Albums' <%= @albums_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'public', :action => 'comments', :uid => @uid %>' title='Comments' <%= @comments_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'public', :action => 'recommends', :uid => @uid %>' title='Recommendations' <%= @recommends_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'site', :action => 'faq' %>' title='FAQ' />
+</fb:tabs>

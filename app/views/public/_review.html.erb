@@ -1,0 +1,17 @@
+<% if @album.rated? -%>
+    <div style="padding:9px; border:1px solid #ccc;background-color:#fff;">
+<%   unless @album.rating_to_s.length < 1 -%>
+      <div style="font-size:12px;color:#333;margin:2px 0px;">
+        <b>Rating:</b> <%= @album.rating_to_s %>
+      </div>
+<%   end -%>
+<%   if @album.review -%>
+      <div style="font-size:11px;color:#333;margin-top:8px;">
+        <h2>Review</h2>
+        <div style="margin-top:4px;">
+<%=  SimpleFormat.format(@album.review.body) %>
+        </div>
+      </div>
+<%   end -%>
+    </div>
+<% end -%>

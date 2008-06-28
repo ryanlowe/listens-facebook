@@ -1,0 +1,14 @@
+<div style="padding:9px;border:1px solid #ccc;background-color:white;">
+  <h2>By Rating</h2>
+  <div style="color:#333;margin-top:8px;">
+<% if @rated.nil? or @rated.size < 1 -%>
+    You haven't rated albums yet.
+<% else -%>
+    <table border="0" cellspacing="0" cellpadding="0">
+<%   for album in @rated -%>
+      <tr><td style="text-align:right;vertical-align:top;padding-right:4px;"><%= album.rating_to_s %></td><td><%= link_album(album) %>&nbsp;<%= listen_count(album) %></td></tr>
+<%   end -%>
+    </table>
+<% end -%>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div style="border:1px solid #ccc;padding:9px;background-color:#fff;">
+  <% form_tag :controller => 'listen', :action => 'create', :album_id => @album.id do %>
+    <h2 style="display:inline;margin-right:20px;">Add a Listen</h2>
+    <%= submit_tag "I'm Listening Now" %>
+    <span style="font-size:12px;margin-left:20px;">
+      &raquo; <%= link_to 'Add a Past Listen', :controller => 'listen', :action => 'new', :album_id => @album %>
+    </span>
+  <% end %>
+</div>

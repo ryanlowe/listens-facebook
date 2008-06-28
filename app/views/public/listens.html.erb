@@ -1,0 +1,21 @@
+<fb:if-is-friends-with-viewer uid="<%= @uid %>">
+  <fb:mediaheader uid="<%= @uid %>">
+    <fb:header-title>Listens by <%= person_name(@uid) %></fb:header-title>
+  </fb:mediaheader>
+<%= render :partial => 'public/tabs' %>
+  <div style="background-color:#f7f7f7;padding:10px;">
+    <table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="width:50%;vertical-align:top;">
+<%= render :partial => 'public/recent_listens' %>
+        </td>
+        <td style="width:50%;vertical-align:top;padding-left:5px;">
+<%= render :partial => 'public/in_rotation' %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <fb:else>
+<%= render :partial => 'site/error_404' %>
+  </fb:else>
+</fb:if-is-friends-with-viewer>

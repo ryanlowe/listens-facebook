@@ -1,0 +1,139 @@
+
+Jun 28
+
+==== moved to GitHub Jun 28
+
+February 16
+- sort albums by artist, then year, then title
+
+January 11
+- update the FAQ with the new security settings
+- move My Listens (front) to listen controller and require app add for it
+- use <fb:if-is-friends-with-viewer/> for public access control
+- remove login requirement for whole app
+
+January 8
+- Facebook needed full URLs in profile box news feed, apparently!
+- clear album rating if num or denom isn't valid
+- show albums by rating in public albums list
+- show albums by rating in My Albums list
+- my and public: put reviews in box
+- FAQ: why aren't listens showing up in my Mini-Feed?
+
+December 28
+- if rating score isn't a decimal, don't show it
+- when a review is added, add to news feed
+- let people add a text review while they rate
+- add Review model
+- remove components directory
+- let people rate albums on their own scale
+- change profile box subtitle to "Recent album listens by [First Name]"
+- temp fix: fixture dates were causing tests to fail
+- change color of FAQ questions
+
+December 16
+- add an FAQ
+
+December 14
+- some initial work for email notifications on comments
+- bugfix: profile box showed "Today" forever, removed that for now
+- make the profile box footer less bold
+- add news feed item on every listen
+- use Rails 2.0.1 in /vendor
+
+December 9
+- link to all shared pages on profile box
+- consolidate news feed code for listens
+- fix album counts site-wide
+
+December 8
+- ignore 'The' when sorting albums
+- add a margin under all titles to make message text more readable
+- include total listen counts on recommended lists
+- use grey main background and boxes with white background
+- My Comments: should use "his/her/their" if own album
+- use "dashboard" for My Listens, My Albums and My Comments
+- My Album: don't show previous listens if none; link to recommender
+- all name links should be public listens page for that person
+- share recommendations, give people credit
+- share a person's comments
+
+December 6
+- album model: previous listen count and recommended by
+- make albums editable
+- add attr_accessible to each model to protect attributes from mass assignment exploits
+- add audit_mass_assignment plugin
+- fix comment width; give comments white background
+- In Rotation: don't show albums with count < 2
+- when someone comments, put in news feed
+- add My Shared Listens to more link bars
+- profile box: in bottom part, link to /my/albums
+- use possessive name in profile action
+
+December 5
+AM
+- add description box to profile box
+- list last 20 albums max in profile box instead of 10
+- Album.find_all_in_rotation_by: don't include deleted listens 
+
+December 1
+AM
+- Shared Album: show other albums by that artist
+- My Album: show other albums by that artist
+- test Public controller
+- prevent non-friends from creating comments on albums
+- add My Comments: list of sent and received comments
+- add exception_notification plugin
+- minor: improve color and spacing of comments area
+- prevent non-owners from seeing personal pages: /my
+- prevent dupe albums from the same user
+- listen: creator must be the same as album
+- album: strip attributes of surrounding whitepspace before saving
+- bugfix: comment form was showing up on pages it shouldn't be
+
+November 30
+PM
+- add Comment controller (new, create, delete, destroy)
+- add simple_format plugin
+- add Comment model
+- put In Rotation list on person's public listens page 
+- improve links between private and public areas
+AM
+- use the <fb:time> tag to show UTC times in the viewer's time zone 
+- front: limit number of each list to 20
+- update the profile action and box
+
+November 29
+- public listens for a person: group by day
+- My Listens: group listens by day
+- disable sessions
+- disable ActionWebService
+- add Google Analytics code
+- show facebook-styled error message on bad new album
+= made facebook_redirect_to method that uses <fb:redirect>
+- minor polishing of UI
+- add Joyent link to footer
+- clean up album show page
+- put friends' listens on the front page
+
+November 28
+- bugfix: front page should require logged in by not added
+- add public pages for friends
+- add My Listens page
+- use the self-media header for mutating controllers
+- store created_by as facebook uid
+- require facebook login for mutating controllers
+- basic cleanup after switch from iframe to fbml
+- add Site controller (front)
+- get project working with dev Facebook app
+- add FacebookUtilities library (thanks Chris Taggart)
+- add mocha plugin
+- add client_date plugin
+- add Listen controller (new, create, delete, destroy)
+- add Listen model
+- add validates_existence plugin
+- add delete, destroy to Album controller
+- add Album controller (list, show, new, create)
+- add Album model
+- use Rails 2.0.0 RC1
+- started Rails project

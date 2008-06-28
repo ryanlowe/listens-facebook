@@ -1,0 +1,7 @@
+<div style="margin-bottom:16px;">
+<%=  SimpleFormat.format(@comment.body) %>
+</div>
+<% form_tag :action => 'destroy', :id => @comment do %>
+  <%= submit_tag 'Yes, delete' %>
+  &laquo; <%= link_to 'Cancel', :controller => 'public', :action => 'album', :id => @comment.album %>
+<% end -%>

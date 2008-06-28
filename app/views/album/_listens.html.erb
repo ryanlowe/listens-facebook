@@ -1,0 +1,18 @@
+<div style="border:1px solid #ccc;padding:9px;background-color:#fff;">
+  <h2>My Listens of <%= @album.title %></h2>
+  <div style="margin-top:8px;color:#333;">
+<% if @album.listens and @album.listens.size > 0 -%> 
+<%   for listen in @album.listens -%>
+    <%= facebook_datetime(listen.listened_at) %> <%= link_to 'Delete', { :controller => 'listen', :action => 'delete', :id => listen }, { :title => 'Delete this Listen' } %><br/>
+<%   end -%>
+    <div style="margin-top:8px">
+      <span style="font-size:13px;"><b>Total listens:</b>&nbsp;x<%= @album.total_listens %></span>
+<% if @album.previous_listen_count -%>
+      (<%= @album.previous_listen_count %> previous)
+<% end -%>
+    </div>
+<% else -%>
+  No listens of this album yet
+<% end -%>
+  </div>
+</div>

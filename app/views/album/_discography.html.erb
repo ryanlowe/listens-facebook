@@ -1,0 +1,11 @@
+<div style="border:1px solid #ccc;padding:9px;background-color:#fff;">
+<% same_artist = @album.all_by_same_artist %>
+<% if same_artist.size > 0 -%>
+  <h2>My Albums by <%= @album.artist %></h2>
+  <div style="margin-top:8px; color:#333;">
+<% for album in same_artist -%>
+    <%= link_album(album) %>&nbsp;<%= listen_count(album) %><br/>
+<% end -%>
+  </div>
+<% end -%>
+</div>

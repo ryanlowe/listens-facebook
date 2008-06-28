@@ -1,0 +1,10 @@
+<% if @album -%>
+<div class="comments" style="background-color:#fff;padding:16px; border-top:1px solid #b7b7b7;">
+  <div style="color:#333;">
+<% for comment in @album.comments -%>
+<%= render :partial => 'comment/comment', :locals => { :comment => comment } %>
+<% end -%>
+<%= render :partial => 'comment/new' %>
+  </div>
+</div>
+<% end -%>

@@ -1,0 +1,33 @@
+<div style="padding:9px;border:1px solid #ccc;background-color:white;">
+  <h2>Recent Comments on My Albums</h2>
+  <div style="margin-top:8px;color:#333;">
+<% if @received and @received.size > 0 -%>
+<%   last_date = nil -%>
+<%   for comment in @received -%>
+<%     date = comment.created_at.year.to_s+comment.created_at.month.to_s+comment.created_at.day.to_s -%>
+<%     unless (last_date == date) -%>
+<%       last_date = date -%>
+    <div style="border-bottom: 1px solid #ccc; font-weight: bold; font-size: 9px; color: #777; margin: 10px 0px 2px; padding-bottom: 2px;">
+      <%= format_feed_date(comment.created_at) %>
+    </div>
+<%     end -%>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="vertical-align:top; width:16px; padding:2px 6px 0px 0px;">
+          <img src="http://static.ak.facebook.com/images/icons/wall_post.gif"/>
+        </td>
+        <td style="color:#333; vertical-align:top; padding-top:2px;">
+          <%= link_person_name(comment.created_by) %> wrote on your album
+          <%= link_public_album(comment.album) %>
+          <span style="color:#999; font-size:9px;">
+             <%= facebook_datetime(comment.created_at) %>
+          </span>
+        </td>
+      </tr>
+    </table>
+<%   end -%>
+<% else -%>
+  No comments on your albums yet
+<% end -%>
+  </div>
+</div>

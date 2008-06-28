@@ -1,0 +1,13 @@
+<fb:mediaheader uid="<%= @uid %>">
+  <fb:header-title><%= @title %></fb:header-title>
+  <fb:owner-action href="<%= url_for :controller => 'public', :action => 'listens', :uid => @uid %>">My Shared Listens</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'listen', :action => 'list' %>">My Listens</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'album', :action => 'list' %>">My Albums</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'comment', :action => 'list' %>">My Comments</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'album', :action => 'new' %>">Add an Album</fb:owner-action>
+</fb:mediaheader>
+<div style="margin:16px;">
+<%= yield %>
+</div>
+<%= render :partial => 'layouts/footer' %>
+<%= render :partial => 'layouts/analytics' %>

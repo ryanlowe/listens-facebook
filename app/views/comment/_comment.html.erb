@@ -1,0 +1,25 @@
+  <div class="comment" style="margin-top:16px;">
+    <table style="width:420px;" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="width:50px;vertical-align:top; padding-right:8px;">
+          <fb:profile-pic uid="<%= comment.created_by %>" linked="true" />
+        </td>
+        <td style="vertical-align:top;">
+          <div style="padding: 4px; border-top: 1px solid #3B5998; border-bottom: 1px solid #ccc; background-color: #f7f7f7;">
+            <b><%= link_person_name(comment.created_by) %></b> wrote<br/>
+            <small style="color:#666;">at <%= facebook_datetime(comment.created_at) %></small>
+          </div>
+          <div style="padding: 4px; background-color:#fff;">
+<%=  SimpleFormat.format(comment.body) %>
+          </div>
+          <div style="padding: 4px; border-bottom: 1px solid #ccc; background-color:#fff;">
+            <small>
+<fb:if-is-user uid="<%= comment.created_by %>">              
+              <%= link_to 'Delete', :controller => 'comment', :action => 'delete', :id => comment %>
+</fb:if-is-user>
+            </small>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>

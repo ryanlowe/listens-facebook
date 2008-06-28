@@ -1,0 +1,21 @@
+<fb:dashboard>
+  <fb:create-button href="<%= url_for :controller => 'album', :action => 'new' %>">Add an Album</fb:create-button>
+</fb:dashboard>
+<% if @uid -%>
+<div style="margin: 8px 16px -16px 0px; font-size: 10pt; font-weight: bold; text-align: right;">
+  <%= link_to 'My Shared Listens', :controller => 'public', :action => 'listens', :uid => @uid %> &raquo;
+</div>
+<% end -%>
+<fb:tabs>
+  <fb:tab-item href='<%= url_for :controller => 'listen', :action => 'list' %>' title='My Listens' <%= @my_listens_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'album', :action => 'list' %>' title='My Albums' <%= @my_albums_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'comment', :action => 'list' %>' title='My Comments' <%= @my_comments_selected %> />
+  <fb:tab-item href='<%= url_for :controller => 'site', :action => 'faq' %>' title='FAQ' <%= @faq_selected %> />
+</fb:tabs>
+<div style="background-color:#f7f7f7;padding:10px;">
+  <div style="">
+<%= yield %>
+  </div>
+</div>
+<%= render :partial => 'layouts/footer' %>
+<%= render :partial => 'layouts/analytics' %>

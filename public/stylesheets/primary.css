@@ -1,0 +1,8 @@
+
+form { margin: 16px 0px; }
+
+ul.collapsed       { list-style: none; display: inline; padding: 0px; margin: 0px; position: relative; }
+  ul.collapsed li  { display: inline; padding: 0px; margin: 0px; position: relative; }
+ul.menu            {}
+  ul.menu li.first { border: 0px; padding: 0px; }
+  ul.menu li       { border-left: 1px solid #999; padding: 0px 0px 0px 4px; }

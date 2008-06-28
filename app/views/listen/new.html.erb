@@ -1,0 +1,14 @@
+<h1>Past Listen of <%= @album.to_s %></h1>
+<br/>
+
+<% form_tag :action => 'create', :album_id => @album.id do %>
+  <table style="margin-bottom: 16px;">
+    <tr>
+      <td><label for="listen_listened_at">Listened at</label></td>
+      <td><%= text_field 'listen', 'listened_at' %></td>
+      <td>in <a href="http://en.wikipedia.org/wiki/UTC">UTC</a> <b>format:</b> yyyy-mm-dd hh:mm</td>
+    </tr>
+  </table>
+  <%= submit_tag 'Add Past Listen' %>
+  &nbsp; &laquo; <%= link_to 'Cancel, back to album', url_for_album(@album) %>
+<% end -%>

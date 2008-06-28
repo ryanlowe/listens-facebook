@@ -1,0 +1,38 @@
+<fb:mediaheader uid="<%= @uid %>">
+  <fb:header-title><%= @title %></fb:header-title>
+  <fb:owner-action href="<%= url_for :controller => 'listen', :action => 'list' %>">My Listens</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'album', :action => 'list' %>">My Albums</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'comment', :action => 'list' %>">My Comments</fb:owner-action>
+  <fb:owner-action href="<%= url_for :controller => 'album', :action => 'new' %>">Add an Album</fb:owner-action>
+</fb:mediaheader>
+<div style="margin:8px;font-size:12px;">
+  <%= link_to 'This Shared Album', :controller => 'public', :action => 'album', :id => @album %>
+  | &raquo; <b><%= link_to 'Edit Album', :controller => 'album', :action => 'edit', :id => @album %></b>
+</div>
+<div style="background-color:#f7f7f7;padding:9px;border-top:1px solid #ccc;">
+  <h1><%= @album.to_s %></h1>
+  <div style="font-size:12px;color:#333;margin:8px 0px;">
+    <%= format_attribute(@album.previous_listen_count, "Previous listen count") -%>
+<% if @album.recommended_by -%>
+    Recommended by: <%= link_person_name(@album.recommended_by) %><br/>
+<% end -%>
+  </div>
+<%= render :partial => 'album/add' %>
+<%= render :partial => 'album/review' %>
+  <table style="width:100%;margin-top:5px;" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td style="width:50%;vertical-align:top;">
+<%= render :partial => 'album/listens' %>
+      </td>
+      <td style="width:50%;padding-left:5px;vertical-align:top;">
+<%= render :partial => 'album/discography' %>
+      </td>
+    </tr>
+  </table>
+<% if @album.destroyable? -%>
+  <div style="margin-top: 16px;">
+    &raquo; <%= link_to 'Delete this Album', { :action => 'delete', :id => @album }, { :title => 'Delete this Album' } %>
+  </div>
+<% end -%>
+</div>
+<%= render :partial => 'comment/comments' %>

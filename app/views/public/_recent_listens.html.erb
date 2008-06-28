@@ -1,0 +1,6 @@
+<div style="padding:9px; border:1px solid #ccc;background-color:#fff;">
+  <h2>Recent Album Listens by <%= person_first_name(@uid) %></h2>
+  <div style="margin-top:8px;color:#333">
+<%= render :partial => 'listen/feed', :locals => { :public_links => true, :person_links => false, :listens => @listens } %>
+  </div>
+</div>

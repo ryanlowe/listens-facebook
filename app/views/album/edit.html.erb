@@ -1,0 +1,11 @@
+<% if @errors -%>
+<fb:error>
+  <fb:message>Couldn't Edit the Album</fb:message>
+  <%= @errors %>
+</fb:error>
+<% end -%>
+<% form_tag :action => 'update', :id => @album do %>
+<%= render :partial => 'album/form' %>
+  <%= submit_tag 'Change Album' %>
+  &nbsp; &laquo; <%= link_to 'Cancel', :controller => 'album', :action => 'show', :id => @album %>
+<% end -%>

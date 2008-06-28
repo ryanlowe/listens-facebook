@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+kasabian:
+  id: 400001
+  created_by: 12345678
+  created_at: 2007-12-28 21:11:49
+  updated_at: 2007-12-28 21:11:49
+  album_id: 100001 # kasabian
+  body: I love this album!

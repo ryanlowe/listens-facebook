@@ -1,0 +1,9 @@
+<div style="margin-bottom: 16px;">
+  Album: <%= link_album(@listen.album) %><br>
+  Listened at: <%= format_datetime(@listen.listened_at) %>
+</div>
+
+<% form_tag :action => 'destroy', :id => @listen do %>
+  <%= submit_tag 'Yes, delete' %>
+  &laquo; <%= link_to 'Cancel', :controller => 'album', :action => 'show', :id => @listen.album %>
+<% end -%>

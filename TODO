@@ -1,0 +1,154 @@
+
+- move FAQ tab to top? (dashboard tab)
+
+- add News tab beside FAQ, with blog-like thing
+
+*** don't require login to view Listens
+  -- if Listens not added:
+    -- front: left side should have an add button
+    -- front: right side should explain why friends can't been shown
+         -- and link to Login to App button to show friends
+    -- front: list friends that have added the app already?
+    -- albums should be readable using <fb:if-can-see/>
+    -- user should be able to see comments
+    -- user should be able to comment if they are a friend (requires login to check POST)
+    ** update FAQ!
+
+- recommend albums to friends
+  -- sends them a notification, with a link to the album
+
+- add albums you want to get and who recommended them
+  -- on first listen "move" to albums list
+  -- list albums that are queued to be listened to
+
+- news feed items only have first name in other people's news
+  -- this is the format for mini feed though! weird...
+
+* consistency: should page titles be prefixed with "Listens - " or not?
+
+* big logo for Application Directory and Application page
+
+* use mocha to ensure feed_publish methods are called correct number of times
+  -- right now it only mocks them out to return true
+
+- list My Albums by rating in the right column
+    -- also below in rotation on public page? 
+
+- use named associations in fixtures (Rails 2.0)
+    -- still seems buggy as of 2.0.2
+
+- news feed is using UTC to split the listens by day
+    -- should it be the profile person's time zone? yes
+
+- listened_at in listens.yml should be relative: 20.days.ago, etc
+
+- after application add or login, go to page that was requested
+
+- let people invite friends
+- don't put album in feed if not today? (could put date: "listened to X on December 2nd)
+- combine albums in feed as the are listened to on the same day?  "Updated: ..."
+* send mail notification when someone makes a comment
+
+- Album optional fields
+  - use a flip out like Developer area? (limited javascript in FBML)
+  * genre tags
+    -- and tag cloud on albums list
+    -- general tags too?  label name, etc
+    -- instead of tags could be attributes (name=value pairs)
+
+- GLOBAL artists and albums
+    -- Facebook-wide and public
+    -- cover and tracklist from Amazon
+    -- sales referrer URLs from Amazon and iTunes, etc
+    -- matched by name to people's albums
+    -- comment boards on artist and album pages    
+    -- lists which of your friends have the album
+    -- overall ratings (imdb-style)
+
+---
+
+- use <fb:if-can-see> instead of requiring login for pages
+  - then user doesn't have to "log in"?
+  - http://wiki.developers.facebook.com/index.php/FeedRankingFAQ
+  - display Facebook's 404 and non-permission page if not allowed
+
+- notification preferences like this page:
+  -- http://www.facebook.com/editaccount.php?notifications
+
+- use fb_sig_request_method to detect whether original HTTP request
+  was a GET or POST
+
+* split profile.setFBML call
+  -- http://developers.facebook.com/news.php?blog=1&story=61
+
+- what is the Facebook "image cache"?
+
+- "previous listen count" isn't obvious enough term?
+
+- format new album and new listen form like Write a Note
+  -- labels on top of the text box
+  -- with facebook-style form widgets
+
+- make 48x48 icon for twitter, etc ... scale up blocky
+
+- if comment is deleted, delete news feed item
+  -- same with listen
+  -- keep track of news feed items with a unique id?
+
+- list queue: albums to get and listen to later
+  -- including albums recommended by other
+  -- once listened, remove from queue
+  -- queue is albums with zero listens?  what about past albums?
+
+
+---
+
+DEPLOYMENT
+
+* move gems to /vendor/gems
+= use Capistrano
+- attractive 404 and 500 pages (Facebook-themed)
+- Rails: do some page, action and fragment caching
+- use a threading library to prevent blocking on Facebook API calls
+
+---
+
+= skip action web service and action mailer?
+= print success messages (ie. after album add)
+= test facebook_redirect_to uses
+= URLs with the artist, album title in them (permalize)
+
+
+LATER
+
+- add "Share" button to shared album pages
+   -- will the album then be visible to the sharer's friends?
+      or only to the album creator's friends still?
+
+- on album page, link to your friend's album pages for the same album (text match)
+    -- how many friends have this same album?
+- can detect user's time zone on submit?
+- listen sequence number cached?
+- import iTunes XML and parse the albums out of it, removing dupes
+- recommend albums to friends (like an invite)
+  -- but more like: check out this picture, check out this note
+- let people invite friends
+  -- on public listens page it says "No listens by this person yet"
+     below that have a link to invite them to add Listens
+
+
+
+
+SCOPES
+
+1. private: maintain your own list
+2. friends: browse your friend's albums and make comments
+       -- you and your friend might have the same album
+          and could be commenting on different areas
+3. networks: (?) --> local bands?
+4. everyone: combine individual's albums somehow, Facebook-wide
+       -- spelling is a big issue
+       -- a global pool of album data would help with album entry
+
+
+

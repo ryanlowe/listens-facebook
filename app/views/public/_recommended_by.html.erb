@@ -1,0 +1,19 @@
+<div style="padding:9px; border:1px solid #ccc;background-color:#fff;">
+  <h2>Albums Recommended by <%= person_first_name(@uid) %></h2>
+  <div style="margin-top:8px;color:#333;">
+<% if @given.nil? or @given.size < 1 -%>
+    No one has given <%= person_first_name(@uid) %> credit yet
+<% else -%>
+<%   to_uid = nil -%>
+<%   for album in @given -%>
+<%     unless to_uid == album.created_by -%>
+    <div style="font-size: 9px; font-weight:bold; color: #777; margin: 10px 0px 2px; padding-bottom: 2px; border-bottom:1px solid #ccc;margin-top:12px;">
+      to <%= link_person_name(album.created_by) %>
+    </div>
+<%       to_uid = album.created_by -%>
+<%     end -%>
+    <%= link_public_album(album) %>&nbsp;<%= listen_count(album) %><br/>
+<%   end -%>
+<% end -%>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+
+<div style="margin-bottom: 16px;">
+  Listens: <%= @album.listens.size %>
+</div>
+
+<% form_tag :action => 'destroy', :id => @album do %>
+  <%= submit_tag 'Yes, delete' %>
+  &laquo; <%= link_to 'Cancel', :controller => 'album', :action => 'show', :id => @album %>
+<% end -%>

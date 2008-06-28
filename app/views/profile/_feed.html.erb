@@ -1,0 +1,15 @@
+<% if listens and listens.size > 0 -%>
+<%   last_date = nil -%>
+<%   for listen in listens -%>
+<%     date = string_date(listen.listened_at) -%>
+<%     unless (last_date == date) -%>
+<%       last_date = date -%>
+        <div style="border-bottom: 1px solid #ccc; font-weight: bold; font-size: 9px; color: #777; margin: 10px 0px 2px; padding-bottom: 2px;">
+          <%= format_feed_date(listen.listened_at) %>
+        </div>
+<%     end -%>
+        <%= link_to listen.album.to_s, "http://apps.facebook.com"+url_for(:controller => 'public', :action => 'album', :id => listen.album) %><br/>
+<%   end -%>
+<% else -%>
+        No listens yet
+<% end -%>

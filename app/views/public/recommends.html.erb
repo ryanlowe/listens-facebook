@@ -1,0 +1,25 @@
+<fb:if-is-friends-with-viewer uid="<%= @uid %>">
+  <fb:mediaheader uid="<%= @uid %>">
+    <fb:header-title>Listens - Recommendations</fb:header-title>
+  </fb:mediaheader>
+<%= render :partial => 'public/tabs' %>
+  <div style="background-color:#f7f7f7;padding:10px;">
+    <div style="color:#333;margin-bottom:8px;">
+      When you add an album you can give a
+      friend credit for recommending it
+    </div>
+    <table style="width:100%;" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td style="width:50%;vertical-align:top;">
+<%= render :partial => 'public/recommended_by' %>
+        </td>
+        <td style="width:50%;vertical-align:top;padding-left:5px;">
+<%= render :partial => 'public/recommended_to' %>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <fb:else>
+<%= render :partial => 'site/error_404' %>
+  </fb:else>
+</fb:if-is-friends-with-viewer>

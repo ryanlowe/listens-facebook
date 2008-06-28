@@ -1,0 +1,12 @@
+<div style="padding:9px;border:1px solid #ccc;background-color:white;">
+  <h2>By Title</h2>
+  <div style="color:#333;margin-top:8px;">
+<% if @albums.nil? or @albums.size < 1 -%>
+    No albums yet.  Add some!
+<% else -%>
+<%   for album in @albums -%>
+    <%= link_album(album) %>&nbsp;<%= listen_count(album) %><br/>
+<%   end -%>
+<% end -%>
+  </div>
+</div>

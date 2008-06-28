@@ -1,0 +1,13 @@
+  <div style="border:1px solid #ccc;margin-top:5px;padding:9px;background-color:#fff;">
+  <div style="font-size:12px;color:#333;">
+    <b>My Rating:</b> <%= @album.rating_to_s_long %> <%= link_to 'Change Rating and Review', :controller => 'rate', :action => 'album', :id => @album %>
+    <div style="font-size:11px;color:#333;margin-top:8px;">
+      <h2>My Review</h2>
+<% if @album.review -%>
+      <div style="margin-top:4px;">
+<%=  SimpleFormat.format(@album.review.body) %>
+      </div>
+<% end -%>
+    </div>
+  </div>
+  </div>

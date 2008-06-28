@@ -1,0 +1,10 @@
+<fb:mediaheader uid="<%= @uid %>">
+  <fb:header-title>Listens - Comment on an Album</fb:header-title>
+</fb:mediaheader>
+<div style="padding:16px;">
+  <div>
+    <h1>Comment on <%= @album.to_s %></h1>
+    In <%= link_person_name_possessive(@uid) %> collection
+  </div>
+<%= render :partial => 'comment/new' %>
+</div>

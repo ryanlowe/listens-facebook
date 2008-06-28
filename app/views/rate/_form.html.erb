@@ -1,0 +1,17 @@
+  <table style="margin-bottom: 16px;">
+    <tr>
+      <td><label for="album_artist">Rating</label></td>
+      <td>
+        <%= text_field 'album', 'rating_numerator', :size => 4 %>
+        out of
+        <%= text_field 'album', 'rating_denominator', :size => 4 %>
+      </td>
+      <td style="padding-left:16px;color:#666;">(ie. 8 out of 10)</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="padding-top:16px;"><h2>Optional Review</h2></td>
+    </tr>
+    <tr>
+      <td colspan="3"><%= text_area_tag 'review', @review, :size => "60x8" %></td>
+    </tr>
+  </table>

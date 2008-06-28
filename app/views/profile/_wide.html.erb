@@ -1,0 +1,28 @@
+<fb:profile-action url="http://apps.facebook.com<%= url_for :controller => 'public', :action => 'listens', :uid => @uid %>">
+   <%= person_first_name_possessive(@uid) %> Album Listens
+</fb:profile-action>
+
+<fb:subtitle seeallurl="http://apps.facebook.com<%= url_for :controller => 'public', :action => 'listens', :uid => @uid %>">
+  Recent album listens by <%= person_first_name(@uid) %>
+</fb:subtitle>
+
+<div style="margin-top:-8px;">  
+<%= render :partial => 'profile/feed', :locals => { :public_links => true, :person_links => false, :listens => @listens } %>
+</div>
+
+<table cellspacing="2" cellpadding="0" style="background-color:#e8effa;margin-top:12px;border:2px solid #cdd7e8;width:100%;">
+  <tr>
+    <td style="text-align:center;">
+      <b><%= person_first_name_possessive(@uid) %></b>
+        <%= link_to 'Listens', "http://apps.facebook.com"+url_for( :controller => 'public', :action => 'listens', :uid => @uid ) %>
+      | <%= link_to 'Albums', "http://apps.facebook.com"+url_for( :controller => 'public', :action => 'albums', :uid => @uid ) %>
+      | <%= link_to 'Comments', "http://apps.facebook.com"+url_for( :controller => 'public', :action => 'comments', :uid => @uid ) %>
+      | <%= link_to 'Recommendations', "http://apps.facebook.com"+url_for( :controller => 'public', :action => 'recommends', :uid => @uid ) %>
+    </td>
+  </tr>
+  <tr>
+    <td style="font-weight:bold;text-align:center;padding-top:0px;">
+      &raquo; <a href="http://apps.facebook.com/listens/my/albums">Add your Listens</a>
+    </td>
+  </tr>
+</table>

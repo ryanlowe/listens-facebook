@@ -1,0 +1,12 @@
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+<fb:if-user-has-added-app>
+    <td style="width:50%;vertical-align:top;">
+<%= render :partial => 'album/by_title' %>
+    </td>
+</fb:if-user-has-added-app>
+    <td style="width:50%;vertical-align:top;padding-left:5px;">
+<%= render :partial => 'album/by_rating' %>
+    </td>
+  </tr>
+</table>
