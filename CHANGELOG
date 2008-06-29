@@ -1,7 +1,10 @@
 
+Jun 29
+= update exception_notification plugin for Rails 2.1.0
+
 Jun 28
-- put Rails 2.1.0 in vendor/rails
-- capify project
+= put Rails 2.1.0 in vendor/rails
+= capify project
 
 ==== moved to GitHub Jun 28
 
