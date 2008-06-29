@@ -1,7 +1,7 @@
 
+- remove stylesheet?
+  -- can move styles to stylesheet now??
 - disable sessions
-- remove client_date
-- remove Javascript files, they are not needed
 
 - only using one mongrel with port 8001
   -- can have a cluster of mongrels behind apache
