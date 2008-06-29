@@ -1,4 +1,11 @@
 
+- only using one mongrel with port 8001
+  -- can have a cluster of mongrels behind apache
+     and point Facebook to port 80:
+     http://wiki.joyent.com/accelerators:deploying_rails_apps
+
+======== older
+
 - move FAQ tab to top? (dashboard tab)
 
 - add News tab beside FAQ, with blog-like thing

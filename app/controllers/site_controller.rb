@@ -9,7 +9,8 @@ class SiteController < ApplicationController
     @faq_selected = "selected='true'"
   end
   
-  def blow
-    raise "Woah!"
+  def boom
+    raise "boom!"
   end
+  
 end

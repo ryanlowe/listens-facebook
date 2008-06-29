@@ -5,7 +5,8 @@ class SiteControllerTest < ActionController::TestCase
   fixtures :albums, :listens
 
   def test_routing
-    assert_routing '/faq', :controller => 'site', :action => 'faq'
+    assert_routing '/faq',  :controller => 'site', :action => 'faq'
+    assert_routing '/boom', :controller => 'site', :action => 'boom'
   end
   
   #
@@ -74,4 +75,22 @@ class SiteControllerTest < ActionController::TestCase
     assert_response :success
     assert_template 'faq'
   end
+  
+  #
+  # boom
+  #
+  
+  def test_boom
+    is_user('12345678')
+    assert_raises(RuntimeError) {
+      get :boom
+    }
+  end
+  
+  def test_boom_anon
+    assert_raises(RuntimeError) {
+      get :boom
+    }
+  end
+  
 end
