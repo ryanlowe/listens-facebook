@@ -5,9 +5,9 @@ class PublicController < ApplicationController
 
   def listens
     #bounce and return unless friend_of_user?(params[:uid])
-    @listens = Listen.find_all_by(params[:uid], { :limit => 20 })
+    @listens = Listen.find_all_by(params[:uid], { :limit => 40 })
     @rotation_days = 90
-    @rotation = Album.find_all_in_rotation_by(params[:uid], { :limit => 20, :days => @rotation_days })
+    @rotation = Album.find_all_in_rotation_by(params[:uid], { :limit => 50, :days => @rotation_days })
     @listens_selected = "selected='true'"
     @uid = params[:uid]
   end
