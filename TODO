@@ -1,4 +1,6 @@
 
+- use acts_as_indestructible
+
 * time zones are broken
   -- supposed to be relative to user's time zone if not provided, but isn't
   -- http://wiki.developers.facebook.com/index.php/Fb:time

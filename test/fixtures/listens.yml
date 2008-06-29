@@ -2,14 +2,14 @@
 interpol_past:
   id: 200001
   created_by: 12345678
-  created_at: 2007-11-28 08:45:33
-  updated_at: 2007-11-28 08:45:33
+  created_at: <%= 5.days.ago.to_s :db %>
+  updated_at: <%= 5.days.ago.to_s :db %>
   album_id: 100002 # interpol
-  listened_at: 2007-12-25
+  listened_at: <%= 5.days.ago.to_s :db %>
 interpol_now:
   id: 200002
   created_by: 12345678
-  created_at: 2007-11-28 08:45:33
-  updated_at: 2007-11-28 08:45:33
+  created_at: <%= 2.days.ago.to_s :db %>
+  updated_at: <%= 2.days.ago.to_s :db %>
   album_id: 100002 # interpol
-  listened_at: 2007-12-28 08:45:33
+  listened_at: <%= 2.days.ago.to_s :db %>

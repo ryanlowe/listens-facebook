@@ -2,8 +2,8 @@
 kasabian:
   id: 100001
   created_by: 12345678
-  created_at: 2007-11-28 07:31:13
-  updated_at: 2007-11-28 07:31:13
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
   artist: Kasabian
   title: Kasabian
   rating_numerator: 7.0
@@ -12,8 +12,8 @@ kasabian:
 interpol:
   id: 100002
   created_by: 12345678
-  created_at: 2007-11-28 07:31:13
-  updated_at: 2007-11-28 07:31:13
+  created_at: <%= 6.days.ago.to_s :db %>
+  updated_at: <%= 6.days.ago.to_s :db %>
   artist: Interpol
   title: Our Love to Admire
   year: 2007

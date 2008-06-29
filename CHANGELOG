@@ -1,5 +1,6 @@
 
 Jun 29
+= bugfix: make fixture times relative
 - fix time text for people in Eastern NA (sorry, FBML bug)
 = remove other unneeded static files
 = remove all javascript files
