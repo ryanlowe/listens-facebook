@@ -2,14 +2,15 @@ set :application, "db4442e2.fb.joyent.us"
 set :project, "listens-facebook"
 set :user, "db4442e2"
 
+#set :rake, "/opt/local/bin/rake"
 default_run_options[:pty] = true
 set :repository,  "git@github.com:ryanlowe/listens-facebook.git"
 set :scm, "git"
-set :scm_command, "/opt/local/bin/git"
+#set :scm_command, "/opt/local/bin/git"
 set :branch, "origin/master"
 
 set :deploy_to, "/home/#{user}/rails/#{project}"
-set :deploy_via, :remote_cache
+#set :deploy_via, :remote_cache
 
 # set the user that will start the mongrel instances
 set :runner, user
