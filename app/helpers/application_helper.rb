@@ -1,16 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  include ClientDate
   
   def format_attribute(value, label=nil)
     return "" if value.nil? or value.to_s.length < 1
     return h(value.to_s)+"<br/>\n" if label.nil?
     ""+h(label.to_s)+": "+h(value.to_s)+"<br/>\n"
-  end
-  
-  def format_date(datetime)
-    return "" if datetime.nil?
-    datetime.strftime("%b %d") 
   end
   
   def string_date(datetime)
@@ -24,11 +18,6 @@ module ApplicationHelper
     #return "Today" if date == string_date(Time.now)
     #return "Yesterday" if date == string_date(1.day.ago)
     datetime.strftime("%B %d") 
-  end
-  
-  def format_datetime(datetime)
-    return "" if datetime.nil?
-    datetime.strftime("%b %d %H:%M")  
   end
   
   def link_person_name(uid)

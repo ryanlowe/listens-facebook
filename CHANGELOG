@@ -1,5 +1,6 @@
 
 Jun 29
+= remove use of client_date plugin; use Facebook tags instead
 = update exception_notification plugin for Rails 2.1.0
 
 Jun 28
