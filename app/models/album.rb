@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
 
-  has_many :listens,  :conditions => "deleted_at IS NULL", :order => "id DESC"
+  has_many :listens,  :conditions => "deleted_at IS NULL", :order => "listened_at DESC"
   has_many :comments, :conditions => "deleted_at IS NULL", :order => "created_at ASC"
   has_one  :review,   :conditions => "deleted_at IS NULL"
   

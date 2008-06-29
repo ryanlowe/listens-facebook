@@ -36,7 +36,7 @@ module ApplicationHelper
   
   def facebook_datetime(datetime)
     return "" if datetime.nil?
-    "<fb:time t='"+datetime.to_i.to_s+"'/>"
+    "<fb:time t='"+datetime.to_i.to_s+"' tz='America/New_York''/>"
   end
   
   # <fb:name/>

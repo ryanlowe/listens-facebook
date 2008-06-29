@@ -1,5 +1,6 @@
 
 Jun 29
+- fix time text for people in Eastern NA (sorry, FBML bug)
 = remove other unneeded static files
 = remove all javascript files
 = remove use of client_date plugin; use Facebook tags instead
