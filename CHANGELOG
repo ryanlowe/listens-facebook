@@ -1,4 +1,7 @@
 
+Jul 2
+- change display time to Eastern (US and Canada) until time zone support works
+
 Jun 29
 = bugfix: make fixture times relative
 - fix time text for people in Eastern NA (sorry, FBML bug)

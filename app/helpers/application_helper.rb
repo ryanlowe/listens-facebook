@@ -9,15 +9,23 @@ module ApplicationHelper
   
   def string_date(datetime)
     return "" if datetime.nil?
-    datetime.year.to_s+datetime.month.to_s+datetime.day.to_s
+    dt = datetime.in_time_zone
+    dt.year.to_s+dt.month.to_s+dt.day.to_s
   end
+  
+  # def string_datetime(datetime)
+  #   return "" if datetime.nil?
+  #   dt = datetime.in_time_zone
+  #   dt.year.to_s+dt.month.to_s+dt.day.to_s+"_"+dt.hour.to_s+dt.min.to_s
+  # end
   
   def format_feed_date(datetime)
     return "" if datetime.nil?
-    date = string_date(datetime)
+    dt = datetime.in_time_zone
+    #date = string_date(dt)
     #return "Today" if date == string_date(Time.now)
     #return "Yesterday" if date == string_date(1.day.ago)
-    datetime.strftime("%B %d") 
+    dt.strftime("%B %d") 
   end
   
   def link_person_name(uid)
@@ -36,7 +44,8 @@ module ApplicationHelper
   
   def facebook_datetime(datetime)
     return "" if datetime.nil?
-    "<fb:time t='"+datetime.to_i.to_s+"' tz='America/New_York''/>"
+    # time since epoch is in UTC
+    "<fb:time t='"+datetime.to_i.to_s+"' tz='America/New_York'/>"
   end
   
   # <fb:name/>

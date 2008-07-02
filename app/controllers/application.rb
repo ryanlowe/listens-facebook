@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include ExceptionNotifiable
   include FacebookUtilities::ControllerUtilities
   
+  before_filter :set_time_zone
+  
   protected
   
     def bounce
@@ -19,5 +21,9 @@ class ApplicationController < ActionController::Base
     def facebook_redirect_to(options = {}, *parameters_for_method_reference)
       options[:only_path] = true
       render :text => '<fb:redirect url="http://apps.facebook.com'+url_for(options)+'"/>'
+    end
+    
+    def set_time_zone
+      Time.zone = "Eastern Time (US & Canada)"
     end
 end

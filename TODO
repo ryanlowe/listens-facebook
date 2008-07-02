@@ -53,13 +53,8 @@
 - list My Albums by rating in the right column
     -- also below in rotation on public page? 
 
-- use named associations in fixtures (Rails 2.0)
-    -- still seems buggy as of 2.0.2
-
 - news feed is using UTC to split the listens by day
     -- should it be the profile person's time zone? yes
-
-- listened_at in listens.yml should be relative: 20.days.ago, etc
 
 - after application add or login, go to page that was requested
 
@@ -125,7 +120,6 @@
 DEPLOYMENT
 
 * move gems to /vendor/gems
-= use Capistrano
 - attractive 404 and 500 pages (Facebook-themed)
 - Rails: do some page, action and fragment caching
 - use a threading library to prevent blocking on Facebook API calls

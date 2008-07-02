@@ -8,7 +8,9 @@
           <%= format_feed_date(listen.listened_at) %>
         </div>
 <%     end -%>
-        <%= link_to listen.album.to_s, "http://apps.facebook.com"+url_for(:controller => 'public', :action => 'album', :id => listen.album) %><br/>
+        <%= link_to listen.album.to_s, "http://apps.facebook.com"+url_for(:controller => 'public', :action => 'album', :id => listen.album) %>
+        <%= listen.listened_at.in_time_zone %>
+        <br/>
 <%   end -%>
 <% else -%>
         No listens yet

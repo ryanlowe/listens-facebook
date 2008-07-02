@@ -46,7 +46,8 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector
 
   # Make Active Record use UTC-base instead of local time
-  config.active_record.default_timezone = :utc
+  config.time_zone = 'UTC'
+  #config.active_record.default_timezone = :utc
 
   # Add new inflection rules using the following format
   # (all these examples are active by default):
