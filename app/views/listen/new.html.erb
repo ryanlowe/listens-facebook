@@ -6,7 +6,7 @@
     <tr>
       <td><label for="listen_listened_at">Listened at</label></td>
       <td><%= text_field 'listen', 'listened_at' %></td>
-      <td>in <a href="http://en.wikipedia.org/wiki/UTC">UTC</a> <b>format:</b> yyyy-mm-dd hh:mm</td>
+      <td>in <b>Eastern Time</b> like <%= Time.now.in_time_zone.strftime("%Y-%m-%d %H:%M") %></td>
     </tr>
   </table>
   <%= submit_tag 'Add Past Listen' %>
