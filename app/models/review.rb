@@ -1,4 +1,5 @@
-class Review < ActiveRecord::Base
+class Review < MonitoredRecord
+  set_table_name "reviews"
 
   belongs_to :album
   

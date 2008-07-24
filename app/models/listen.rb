@@ -1,5 +1,6 @@
-class Listen < ActiveRecord::Base
-
+class Listen < MonitoredRecord
+  set_table_name "listens"
+  
   belongs_to :album
   
   validates_presence_of :created_by

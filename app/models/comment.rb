@@ -1,4 +1,5 @@
-class Comment < ActiveRecord::Base
+class Comment < MonitoredRecord
+  set_table_name "comments"
 
   belongs_to :album
   

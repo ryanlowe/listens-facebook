@@ -1,4 +1,5 @@
-class Album < ActiveRecord::Base
+class Album < MonitoredRecord
+  set_table_name "albums"
 
   has_many :listens,  :conditions => "deleted_at IS NULL", :order => "listened_at DESC"
   has_many :comments, :conditions => "deleted_at IS NULL", :order => "created_at ASC"

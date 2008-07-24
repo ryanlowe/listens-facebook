@@ -1,20 +1,22 @@
 
+- edit album: can't clear previous listens from 0 to nothing
+
 - use acts_as_indestructible
 
 * time zones are broken
   -- supposed to be relative to user's time zone if not provided, but isn't
   -- http://wiki.developers.facebook.com/index.php/Fb:time
-  -- right now just using America/New_York
+  -- right now just using America/New_York and Eastern (US and Canada) for server
 
 - queue long-running operations with database+cron?
 
-- remove stylesheet?
-  -- can move styles to stylesheet now??
+- remove stylesheet or can move styles to stylesheet now?
 
 - only using one mongrel with port 8001
   -- can have a cluster of mongrels behind apache
      and point Facebook to port 80:
      http://wiki.joyent.com/accelerators:deploying_rails_apps
+  -- nginx caching could speed things up a lot
 
 ======== older
 

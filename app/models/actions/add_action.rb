@@ -1,0 +1,3 @@
+class AddAction < Action
+    
+end

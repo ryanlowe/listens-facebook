@@ -1,4 +1,10 @@
 
+Jul 24
+= add AddAction model to store when monitored objects are added
+= add MonitoredRecord class
+= add Action model
+= add save_or_raise plugin
+
 Jul 2
 - change input time for past listen to Eastern (US and Canada) until time zone support works
 - change display time to Eastern (US and Canada) until time zone support works
