@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/db4442e2/rails/listens-facebook/current/script/process/spawner -p 8001 -i 1
+/home/deploy/rails/listens-facebook/current/script/process/spawner -p 9000 -i 1
